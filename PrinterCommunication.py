@@ -37,16 +37,16 @@ def send_gcode(port: str, baud: int, commands: list[str], timeout=5):
 
 
 if __name__ == "__main__":
-    #if len(sys.argv) < 4:
-    #     exe = Path(sys.argv[0]).name
-    #     print(f"Usage: python {exe} <port> <baud> <G-code1> [G-code2] …")
-    #     sys.exit(1)
+    if len(sys.argv) < 4:
+        exe = Path(sys.argv[0]).name
+        print(f"Usage: python {exe} <port> <baud> <G-code1> [G-code2] …")
+        sys.exit(1)
 
-    # port_name   = sys.argv[1]
-    # baud_rate   = int(sys.argv[2])
-    # gcode_lines = sys.argv[3:]
-    #send_gcode(port_name, baud_rate, gcode_lines)
-    # print("Hallo")
-    # print(sys.argv[1],int(sys.argv[2],sys.argv[3:]))
-    gcode=["G0 X 200","G0 Y 250"]
-    send_gcode('COM10', 9600 ,gcode)
+    port_name   = sys.argv[1]
+    baud_rate   = int(sys.argv[2])
+    gcode_lines = sys.argv[3:]
+    send_gcode(port_name, baud_rate, gcode_lines)
+    print("Hallo")
+    print(sys.argv[1],int(sys.argv[2],sys.argv[3:]))
+    # gcode=["G0 X 200","G0 Y 250"]
+    # send_gcode('COM10', 9600 ,gcode)
